@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JS Calculator</title>
+   <style>
+      body {
+         font-family: 'Courier New', Courier, monospace;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         background-color: #f0f0f0;
+      }
+
+      .calculator {
+         background-color: #fff;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         max-width: 300px;
+         width: 100%;
+      }
+
+      .calculator h1 {
+         margin-bottom: 20px;
+         font-size: 24px;
+         text-align: center;
+      }
+
+      .calculator input {
+         width: calc(100% - 24px);
+         padding: 10px;
+         font-size: 18px;
+         border: 1px solid #ddd;
+         border-radius: 5px;
+         margin-bottom: 20px;
+         display: block;
+         text-align: right;
+      }
+
+      .calculator button {
+         width: 20%;
+         padding: 10px;
+         font-size: 18px;
+         margin: 5px 1%;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         background-color: #f9f9f9;
+         transition: background-color 0.3s;
+      }
+
+      .calculator button:hover {
+         background-color: #e0e0e0;
+      }
+
+      .calculator .operator {
+         background-color: #f0f0f0;
+      }
+
+      .calculator .equal {
+         background-color: #ff9500;
+         color: #fff;
+      }
+
+      .calculator .equal:hover {
+         background-color: #e08600;
+      }
+
+      .calculator .reset {
+         background-color: #ff3b30;
+         color: #fff;
+      }
+
+      .calculator .reset:hover {
+         background-color: #e03228;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="calculator">
+      <h1>JS Calculator</h1>
+      <input id="value" type="text" readonly> <br>
+
+      <button onclick="show('1')">1</button>
+      <button onclick="show('2')">2</button>
+      <button onclick="show('3')">3</button>
+      <button onclick="show('4')">4</button>
+      <button onclick="show('5')">5</button>
+      <button onclick="show('6')">6</button>
+      <button onclick="show('7')">7</button>
+      <button onclick="show('8')">8</button>
+      <button onclick="show('9')">9</button>
+      <button onclick="show('0')">0</button> <br>
+
+      <button class="operator" onclick="show('+')">+</button>
+      <button class="operator" onclick="show('-')">-</button>
+      <button class="operator" onclick="show('*')">*</button>
+      <button class="operator" onclick="show('/')">/</button>
+      <button class="equal" onclick="cal()">=</button>
+      <button class="reset" onclick="reset()">C</button>
+   </div>
+
+   <script>
+      const Display = document.getElementById('value');
+
+      const show = (n) => {
+         Display.value += n;
+      }
+
+      const cal = () => {
+         try {
+            Display.value = eval(Display.value)
+         } catch {
+            Display.value = 'Error';
+         }
+      }
+
+      const reset = () => {
+         Display.value = '';
+      }
+   </script>
+</body>
+
+</html>
