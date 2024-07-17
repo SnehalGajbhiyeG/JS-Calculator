@@ -9,4 +9,4 @@ A simple JavaScript calculator with a clean, responsive design that handles basi
 
 ## Demo
 
-![Calculator Screenshot](path/to/screenshot.png)
+![Here](https://snehal-js-calculator.vercel.app/)
